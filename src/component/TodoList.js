@@ -86,7 +86,7 @@ export default function TodoList({
                 onClick={() => handleCompletedTodo(todo.id)}
               >
                 {todo.isCompleted && (
-                  <img src="/images/icon-check.svg" alt="checked-icon" />
+                  <img src="./images/icon-check.svg" alt="checked-icon" />
                 )}
               </Box>
               <Typography
@@ -116,7 +116,7 @@ export default function TodoList({
               }}
               onClick={() => handleDeleteTodo(todo.id)}
             >
-              <img src="/images/icon-cross.svg" alt="delete-icon " />
+              <img src="./images/icon-cross.svg" alt="delete-icon " />
             </Box>
           </Box>
         );

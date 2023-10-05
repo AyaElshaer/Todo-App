@@ -29,9 +29,9 @@ export default function TodoHeader({ theme, setTheme }) {
         }
       >
         {theme === "dark" ? (
-          <img src="/images/icon-sun.svg" alt="sun-icon" />
+          <img src="./images/icon-sun.svg" alt="sun-icon" />
         ) : (
-          <img src="/images/icon-moon.svg" alt="moon-icon" />
+          <img src="./images/icon-moon.svg" alt="moon-icon" />
         )}
       </Box>
     </Box>

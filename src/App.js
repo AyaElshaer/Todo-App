@@ -71,12 +71,12 @@ function App() {
             backgroundImage: {
               xs:
                 theme === "dark"
-                  ? "url(/images/bg-mobile-dark.jpg)"
-                  : "url(/images/bg-mobile-light.jpg)",
+                  ? "url(./images/bg-mobile-dark.jpg)"
+                  : "url(./images/bg-mobile-light.jpg)",
               sm:
                 theme === "dark"
-                  ? "url(/images/bg-desktop-dark.jpg)"
-                  : "url(/images/bg-desktop-light.jpg)",
+                  ? "url(./images/bg-desktop-dark.jpg)"
+                  : "url(./images/bg-desktop-light.jpg)",
             },
             backgroundRepeat: "no-repeat",
             backgroundSize: "100%",
