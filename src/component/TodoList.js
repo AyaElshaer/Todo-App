@@ -18,7 +18,10 @@ export default function TodoList({
 
   const handleFilter = (type) => {
     setFilter(type);
-    switch (type) {
+  };
+
+  useEffect(() => {
+    switch (filter) {
       case "active":
         setFilteredTodos(todos.filter((todo) => todo.isActive));
         break;
@@ -28,7 +31,7 @@ export default function TodoList({
       default:
         setFilteredTodos(todos);
     }
-  };
+  }, [filter, todos]);
 
   return (
     <Box
@@ -77,21 +80,40 @@ export default function TodoList({
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  position: "relative",
                   backgroundImage: todo.isCompleted && COLORS.CheckBackground,
                   "&:hover": {
-                    borderColor: COLORS.BrightBlue
-                    
+                    backgroundImage: COLORS.CheckBackground,
+                    border: "none",
+                    width: "22px",
+                    height: "22px",
                   },
                 }}
                 onClick={() => handleCompletedTodo(todo.id)}
               >
                 {todo.isCompleted && (
-                  <img src="./images/icon-check.svg" alt="checked-icon" />
+                  <img
+                    src="./images/icon-check.svg"
+                    alt="checked-icon"
+                  />
                 )}
+                <Box
+                  sx={{
+                    display: todo.isCompleted ? "none" : "block",
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    background:
+                      theme === "dark"
+                        ? COLORS.VeryDarkDesaturatedBlue
+                        : "white",
+                  }}
+                />
               </Box>
+
               <Typography
                 sx={{
-                  fontSize: { lg: '18px'},
+                  fontSize: { lg: "18px" },
                   fontWeight: "400",
                   color: todo.isCompleted
                     ? theme === "dark"
@@ -163,7 +185,10 @@ export default function TodoList({
               justifyContent: { xs: "space-evenly", md: "unset" },
               py: { xs: "16px", md: "unset" },
               borderRadius: "5px",
-              boxShadow:  { xs: theme === "light" && "rgba(0, 0, 0, 0.2) 0px 0px 20px", md : 'unset'}
+              boxShadow: {
+                xs: theme === "light" && "rgba(0, 0, 0, 0.2) 0px 0px 20px",
+                md: "unset",
+              },
             }}
           >
             <Typography

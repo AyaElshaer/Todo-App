@@ -25,7 +25,7 @@ export default function TodoHeader({ theme, setTheme }) {
       <Box
         sx={{ "&:hover": { cursor: "pointer" } }}
         onClick={() =>
-          setTheme(theme => theme === "dark" ? "light" : "dark")
+          setTheme((theme) => (theme === "dark" ? "light" : "dark"))
         }
       >
         {theme === "dark" ? (
